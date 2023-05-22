@@ -2,14 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<h2>Input date you want to see</h2>
-<h3>Example: 20230522</h3>
-<form method="POST" action="/api">
-  <input type="text" name="date"/>
-  <input type="submit" value="CLick"/>
-</form>
+<header>
+  <nav>
+    <div class="headerLayout">
+      <div class="headerWrapper">
+        <div class="headerUpper">
+          <div class="logo"></div>
+          <div class="statusWrapper">
+            <div class="userButtonWrapper">
+              <div class="userButton">
+                <div class="userText">로그인/회원가입</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="headerContentLayout">
+          <div class="SearchBar">
+
+            <div class="categorySection">
+              <div style="padding:0" class="categoryWrapper">카테고리</div>
+              <div class="categoryWrapper">홈</div>
+              <div class="categoryWrapper">인기</div>
+              <div class="categoryWrapper">마감임박</div>
+            </div>
+
+            <div class="searchInputWrapper">
+              <input placeholder="검색어를 입력해주세요." class="searchInput">
+              <div class="SearchButton"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="discoverWrapper">
+
+    <div class="filterWrapper">
+      <div class="filterLayout">
+        <div class="filterOptions">
+          <div class="wrap">
+            <button class="styledButton">테마별</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="infinityContainer">
+      <div class="InfinityList_resultWrapper">
+        <div class="InfinityList_resultCounter">
+          <span>10000</span>
+          개의 문화행사가 있습니다.
+        </div>
+
+        <div class="InfinityList_listWrapper">
+
+          <div class="InfinityList_projectCardWrapper">
+            <div class="projectCardWrapper">
+              <div></div>
+              <div class="projectCard">
+              <!--        main_img, org_link        -->
+                <div class="projectCard_ImageBox">
+                  <div class="imageWrapper">
+                    <a href=""></a>
+                  </div>
+                </div>
+                <div class="projectCard_InfoBox">
+                  <dl>
+                    <dd class="codeName">클래식</dd>
+                    <dt class="title">2023 서울시향 미하일 플레트뇨프와 선우예권 ①</dt>
+                    <dd class="place">롯데콘서트홀</dd>
+                    <div class="projectCardFeeDay">
+                      <span class="useFee">R 120,000 S 90,000 A 60,000 B 30,000 C 10,000</span>
+                      <span class="Dday">10</span> 후 종료
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

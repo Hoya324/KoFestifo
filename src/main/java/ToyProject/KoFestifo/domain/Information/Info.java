@@ -28,29 +28,22 @@ import lombok.Setter;
 @Getter @Setter
 public class Info {
 
-    private String data;
-    private String strtdate;
-    private String end_date;
-    private String title;
-    private String codename;
-    private String guname;
+    private Long id;
     private String main_img;
     private String org_link;
-    private String use_fee;
+    private String codename;
+    private String title;
     private String place;
+    private String use_fee;
 
-    public Info(String data, String strtdate, String end_date,
-                String title, String codename, String guname,
-                String main_img, String org_link, String use_fee, String place) {
-        this.data = data;
-        this.strtdate = strtdate;
-        this.end_date = end_date;
-        this.title = title;
-        this.codename = codename;
-        this.guname = guname;
+    public Info(Long id, String main_img, String org_link, String codename,
+                String title, String place, String use_fee) {
+        this.id = id;
         this.main_img = main_img;
         this.org_link = org_link;
-        this.use_fee = use_fee;
+        this.codename = codename;
+        this.title = title;
         this.place = place;
+        this.use_fee = use_fee;
     }
 }
