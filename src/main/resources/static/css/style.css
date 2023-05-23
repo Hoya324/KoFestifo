@@ -53,7 +53,7 @@ nav {
     display: flex;
     width: 100%;
     background: rgb(255, 255, 255);
-    justify-content: center;
+    justify-content: space-between;
     z-index: 1000;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 6px;
 }
@@ -67,14 +67,14 @@ nav {
     min-height: 105px;
     align-items: center;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .headerUpper {
     display: flex;
-    width: 100%;
+    width: 95%;
     min-height: 48px;
     max-height: 72px;
-    max-width: 1080px;
     align-items: center;
     justify-content: space-between;
 }
@@ -133,8 +133,7 @@ nav {
 
 .SearchBar {
     display: flex;
-    width: 100%;
-    max-width: 1080px;
+    width: 95%;
     min-height: 56px;
     background: rgb(255, 255, 255);
     align-items: center;
