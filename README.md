@@ -19,8 +19,11 @@ spring.datasource.password=비밀번호
 
 ### Welcome 페이지 추가
 
-<img width="1470" alt="스크린샷 2023-05-23 오후 2 18 14" src="https://github.com/Hoya324/KoFestifo/assets/96857599/07acb055-acdd-4d8d-b899-c35127108e6b">
+<img width="1454" alt="스크린샷 2023-05-25 오전 11 14 32" src="https://github.com/Hoya324/KoFestifo/assets/96857599/9983030e-520b-4402-82fa-762d5e2a7f14">
 
-<img width="1470" alt="스크린샷 2023-05-23 오후 2 18 50" src="https://github.com/Hoya324/KoFestifo/assets/96857599/72945afe-4819-4eee-ae3a-d4a31aa31526">
+
+<img width="1451" alt="스크린샷 2023-05-25 오전 11 14 48" src="https://github.com/Hoya324/KoFestifo/assets/96857599/c411d063-ccfa-4d54-b58a-aa7e67ce81f7">
+
+
 
 
