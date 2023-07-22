@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>KOFESTIFO</title>
   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -13,30 +13,27 @@
     <div class="headerLayout">
       <div class="headerWrapper">
         <div class="headerUpper">
-          <div class="logo"></div>
+          <a class="logo" href="/"></a>
           <div class="statusWrapper">
             <div class="userButtonWrapper">
               <div class="userButton">
-                <div class="userText">로그인/회원가입</div>
+                <a class="userText" href="/members/new">로그인/회원가입</a>
               </div>
             </div>
           </div>
         </div>
         <div class="headerContentLayout">
           <div class="SearchBar">
-
             <div class="categorySection">
-              <div style="padding:0" class="categoryWrapper">카테고리</div>
-              <div class="categoryWrapper">홈</div>
-              <div class="categoryWrapper">인기</div>
-              <div class="categoryWrapper">마감임박</div>
+              <a style="padding:0" class="categoryWrapper">카테고리</a>
+              <a class="categoryWrapper" href="/">홈</a>
+              <a class="categoryWrapper" href="/events/popular">인기</a>
+              <a class="categoryWrapper" href="/events/imminentDeadline">마감임박</a>
             </div>
-
             <div class="searchInputWrapper">
               <input placeholder="검색어를 입력해주세요." class="searchInput">
               <div class="SearchButton"></div>
             </div>
-
           </div>
         </div>
       </div>
@@ -46,18 +43,16 @@
 
 <div class="container">
   <div class="discoverWrapper">
-
     <div class="filterWrapper">
       <div class="filterLayout">
         <div class="filterOptions">
           <div class="wrap">
-            <button class="styledButton">테마별</button>
+            <a class="styledButton">테마별</a>
             <a class="styledButton" href="/events/new">행사 등록</a>
           </div>
         </div>
       </div>
     </div>
-
     <div class="infinityContainer">
       <div class="InfinityList_resultWrapper">
         <div class="InfinityList_resultCounter">
