@@ -47,6 +47,11 @@ nav {
     display: flex;
 }
 
+a {
+    text-decoration-line: none;
+    color: rgb(13, 13, 13);
+}
+
 .headerLayout {
     padding: 0px 16px;
     position: fixed;
@@ -235,6 +240,7 @@ nav {
     padding-left: 1rem;
     flex-wrap: nowrap;
     white-space: nowrap;
+    font-size: 15px;
 }
 
 .styledButton {
