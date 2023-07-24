@@ -44,12 +44,17 @@ table {
 }
 
 nav {
-    display: flex;
+    border-bottom: 2px solid rgb(227, 224, 224) !important;
 }
 
 a {
     text-decoration-line: none;
     color: rgb(13, 13, 13);
+}
+
+.btn-secondary {
+    justify-content: center;
+    align-content: center;
 }
 
 .headerLayout {
@@ -86,13 +91,24 @@ a {
 
 .logo {
     display: flex;
-    background: url(../img/logo.png);
+    background: url(../img/logo.png) no-repeat;
     align-items: center;
     justify-content: center;
-    width: 180px;
-    height: 80px;
+    width: 160px;
+    height: 70px;
     cursor: pointer;
     background-size: contain;
+}
+
+.empty {
+    margin-top: 90px;
+}
+
+.category {
+    box-sizing: border-box!important;
+    border-radius: 4px!important;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .statusWrapper {
@@ -111,9 +127,10 @@ a {
 }
 
 .userButton {
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-top: 10px!important;
     position: relative;
-    padding: 16px;
+    padding: 10px!important;
     display: inline-flex;
     width: auto;
     min-width: 30px;
@@ -271,7 +288,8 @@ a {
 }
 
 .InfinityList_resultCounter {
-    margin: 12px 5px;
+    margin: 12px 12px 12px;
+    padding-left: 15px;
 }
 
 .InfinityList_resultWrapper {
@@ -314,14 +332,11 @@ a {
 }
 
 .imageWrapper {
-    position: relative;
-    object-fit: contain;
-    box-sizing: border-box;
-}
-
-.imageWrapper a img {
-    width: 100%;
-    height: 100%;
+    position: relative!important;
+    object-fit: contain!important;
+    box-sizing: border-box!important;
+    width: 100%!important;
+    height: 100%!important;
 }
 
 .projectCard_InfoBox {
@@ -329,26 +344,38 @@ a {
 }
 
 .codeName {
-    color: rgb(61, 61, 61);
-    font-size: 12px;
-    line-height: 19px;
-    letter-spacing: -0.01em;
+    color: rgb(61, 61, 61)!important;
+    font-size: 13px!important;
+    font-weight: bold;
+    line-height: 19px!important;
+    letter-spacing: -0.01em!important;
 }
 
 .title {
-    color: rgb(61, 61, 61);
-    font-size: 16px;
-    font-weight: bold;
-    text-size-adjust: auto;
+    text-size-adjust : auto!important;
+    color: rgb(61, 61, 61) !important;
+    font-size: 16px!important;
+    font-weight: bold!important;
+    text-size-adjust: auto!important;
 }
 
-.projectCardFeeDay > span {
-    color: rgb(255, 87, 87);
-    font-size: 12px;
+
+.projectCardFeeDay {
+    color: rgb(255, 87, 87)!important;
+    font-size: 12px!important;
 }
 
-.projectCardDate > span {
-    font-weight: 800;
-    color: rgb(14, 91, 180);
+.projectCardDate {
+    font-weight: 800!important;
+    color: rgb(14, 91, 180) !important;
 }
+
+.row {
+    margin-bottom: 20px!important;
+}
+
+.navbar {
+    top: 5px;
+}
+
 
