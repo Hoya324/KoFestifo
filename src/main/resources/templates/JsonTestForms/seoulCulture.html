@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"/>
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+    <div>
+        <table class="table table-striped">
+            <thead>
+            </thead>
+            <tbody>
+            <tr th:each="event : ${events}">
+                <td th:text="${event.id}"></td>
+                <td th:text="${event.main_img}"></td>
+                <td th:text="${event.org_link}"></td>
+                <td th:text="${event.title}"></td>
+                <td th:text="${event.place}"></td>
+                <td th:text="${event.use_fee}"></td>
+                <td th:text="${event.date}"></td>
+                <td th:text="${event.codename}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:replace="fragments/footer :: footer"/>
+</div> <!-- /container -->
+</body>
+</html>
