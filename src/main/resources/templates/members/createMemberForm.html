@@ -11,7 +11,7 @@
   <div>
     <h3 class="font-weight-bold">회원 생성</h3>
   </div>
-  <form role="form" action="/members/new" th:object="${memberForm}" method="post">
+  <form role="form" action="/members/new" th:object="${memberDTO}" method="post">
     <div class="form-group">
       <label th:for="username">이름</label>
       <input type="text" th:field="*{username}" class="form-control" placeholder="이름을 입력하세요"
