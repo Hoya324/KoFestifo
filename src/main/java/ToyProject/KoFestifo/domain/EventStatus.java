@@ -1,6 +1,6 @@
 package ToyProject.KoFestifo.domain;
 
 public enum EventStatus {
-    BASIC,
-    FAVORITES
+	IN_PROGRESS,
+	EXPIRED
 }
