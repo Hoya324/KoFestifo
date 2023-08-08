@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import ToyProject.KoFestifo.domain.Event;
 import ToyProject.KoFestifo.service.KofestifoService;
-import ToyProject.KoFestifo.util.SeoulOpenAPIManager;
+import ToyProject.KoFestifo.util.DataManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,11 +19,11 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class HomeController {
 	private final KofestifoService<Event> eventService;
-	private final SeoulOpenAPIManager seoulOpenAPIManager;
+	private final DataManager dataManager;
 
 	@GetMapping("/")
 	public String index(Model model) throws IOException, ParseException {
-		seoulOpenAPIManager.readJson();
+		dataManager.readJson();
 		List<Event> events = eventService.findMembers();
 		model.addAttribute("events", events);
 		return "home";
