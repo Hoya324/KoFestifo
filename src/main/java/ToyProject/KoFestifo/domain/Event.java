@@ -4,40 +4,46 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Getter @Setter
+@Getter
+@Setter
+@RequiredArgsConstructor
 public class Event {
 
-    @Id @GeneratedValue
-    @Column(name = "event_id")
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "event_id")
+	private Long id;
 
-    private String main_img;
-    private String org_link;
-    private String title;
-    private String place;
-    private String use_fee;
-    private String date;
-    private String codename;
+	@Enumerated(EnumType.STRING)
+	private EventStatus status;
 
-    @Enumerated(EnumType.STRING)
-    private EventStatus status;
+	private String main_img;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
-    private Member member;
+	@Column(length = 1000)
+	private String org_link;
+	private String title;
+	private String place;
+	@Column(length = 500)
+	private String use_fee;
+	private String date;
+	private String codename;
 
-    /**
-     * date를 이용해서 D-day 만들기
-     */
-
-
+	public Event(String main_img, String org_link,
+		String title, String place, String use_fee, String date, String codename) {
+		this.main_img = main_img;
+		this.org_link = org_link;
+		this.title = title;
+		this.place = place;
+		this.use_fee = use_fee;
+		this.date = date;
+		this.codename = codename;
+	}
 }
