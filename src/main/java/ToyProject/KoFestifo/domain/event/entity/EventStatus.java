@@ -1,4 +1,4 @@
-package ToyProject.KoFestifo.domain;
+package ToyProject.KoFestifo.domain.event.entity;
 
 public enum EventStatus {
 	IN_PROGRESS,

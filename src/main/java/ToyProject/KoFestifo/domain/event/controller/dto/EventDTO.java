@@ -1,4 +1,4 @@
-package ToyProject.KoFestifo.dto;
+package ToyProject.KoFestifo.domain.event.controller.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

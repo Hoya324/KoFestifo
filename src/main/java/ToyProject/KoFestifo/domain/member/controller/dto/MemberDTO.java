@@ -1,4 +1,4 @@
-package ToyProject.KoFestifo.dto;
+package ToyProject.KoFestifo.domain.member.controller.dto;
 
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;

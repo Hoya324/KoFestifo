@@ -1,4 +1,4 @@
-package ToyProject.KoFestifo.util;
+package ToyProject.KoFestifo.domain.init.util;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,8 +10,8 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Component;
 
-import ToyProject.KoFestifo.domain.Event;
-import ToyProject.KoFestifo.service.KofestifoService;
+import ToyProject.KoFestifo.domain.event.entity.Event;
+import ToyProject.KoFestifo.domain.event.service.EventService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,7 +22,7 @@ public class DataManager {
 
 	private static final String FILENAME = "/Users/gangho/Desktop/projects/KoFestifo/src/main/resources/templates/data/seoulCulture.json";
 
-	private final KofestifoService<Event> eventService;
+	private final EventService eventService;
 
 	public void readJson() throws IOException, ParseException {
 		log.info("home 페이지 진입");

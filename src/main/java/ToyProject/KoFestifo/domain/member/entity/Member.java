@@ -1,8 +1,9 @@
-package ToyProject.KoFestifo.domain;
+package ToyProject.KoFestifo.domain.member.entity;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import ToyProject.KoFestifo.domain.event.entity.RegisteredEvent;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

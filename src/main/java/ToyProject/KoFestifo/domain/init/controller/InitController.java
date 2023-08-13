@@ -1,4 +1,4 @@
-package ToyProject.KoFestifo.controller;
+package ToyProject.KoFestifo.domain.init.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -8,23 +8,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import ToyProject.KoFestifo.domain.Event;
-import ToyProject.KoFestifo.service.KofestifoService;
-import ToyProject.KoFestifo.util.DataManager;
+import ToyProject.KoFestifo.domain.event.entity.Event;
+import ToyProject.KoFestifo.domain.event.service.EventService;
+import ToyProject.KoFestifo.domain.init.util.DataManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @Slf4j
 @RequiredArgsConstructor
-public class HomeController {
-	private final KofestifoService<Event> eventService;
+public class InitController {
+	private final EventService eventService;
 	private final DataManager dataManager;
 
 	@GetMapping("/")
 	public String index(Model model) throws IOException, ParseException {
 		dataManager.readJson();
-		List<Event> events = eventService.findMembers();
+		List<Event> events = eventService.findEvents();
 		model.addAttribute("events", events);
 		return "home";
 	}

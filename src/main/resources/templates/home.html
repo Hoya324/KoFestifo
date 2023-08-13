@@ -1,175 +1,123 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KOFESTIFO</title>
-  <link href="/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/bootstrap.min.css" integrity="sha384-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOFESTIFO</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" integrity="sha384-
   ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous">
-  <!-- Custom styles for this template -->
-  <link href="/css/jumbotron-narrow.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+          crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="/css/jumbotron-narrow.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <header>
-  <nav class="fixed-top navbar navbar-expand-lg bg-white">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar bg-dark"></span>
-        <span class="icon-bar bg-dark"></span>
-        <span class="icon-bar bg-dark"></span>
-      </button>
-      <a class="logo" href="/"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active bg-white"><a class="nav-link text-dark font-weight-bold category" href="/">홈</a></li>
-        <li><a class="nav-link text-dark font-weight-bold category" href="/events/new">행사 등록</a></li>
-        <li><a class="nav-link text-dark font-weight-bold category" href="/events/myEvents">나의 행사</a></li>
-        <li><a class="nav-link text-dark font-weight-bold category" href="/events/popular">인기</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a class="userButton text-dark font-weight-bold" href="/members/new"><span class="glyphicon glyphicon-user"></span> 회원가입</a></li>
-        <li><a class="userButton text-dark font-weight-bold" href="/members/login"><span class="glyphicon glyphicon-log-in"></span> 로그인</a></li>
-      </ul>
-    </div>
-  </nav>
+    <nav class="fixed-top navbar navbar-expand-lg bg-white">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar bg-dark"></span>
+                <span class="icon-bar bg-dark"></span>
+                <span class="icon-bar bg-dark"></span>
+            </button>
+            <a class="logo" href="/"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active bg-white"><a class="nav-link text-dark font-weight-bold category" href="/">홈</a></li>
+                <li><a class="nav-link text-dark font-weight-bold category" href="/events/new">행사 등록</a></li>
+                <li><a class="nav-link text-dark font-weight-bold category" href="/events/myEvents">나의 행사</a></li>
+                <li><a class="nav-link text-dark font-weight-bold category" href="/events/popular">인기</a></li>
+                <li><a class="nav-link text-dark font-weight-bold category" href="/eventAPIForms/api">데이터 확인</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="userButton text-dark font-weight-bold" href="/members/new"><span
+                        class="glyphicon glyphicon-user"></span> 회원가입</a></li>
+                <li><a class="userButton text-dark font-weight-bold" href="/members/login"><span
+                        class="glyphicon glyphicon-log-in"></span> 로그인</a></li>
+            </ul>
+        </div>
+    </nav>
 </header>
 <div class="InfinityList_resultCounter">
-  <span>10000</span>
-  개의 문화행사가 있습니다.
+    <span th:text="${events.size()}">10000</span>
+    개의 문화행사가 있습니다.
 </div>
-
-<div class="container-fluid">
-
-  <div class="row no-gutters">
-    <div class="col-sm col">
-      <div class="card">
-        <div class="card-body">
-          <img class="imageWrapper" src="https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0ca211044ff94618ac75427b299492f6&thumb=Y" alt="Card image">
-          <p class="card-text codeName text-sm-left"><span class="badge badge-info bg-info">테마</span> 클래식</p>
-          <p class="card-text title">2023 서울시향 미하일 플레트뇨프와 선우예권 ①</p>
-          <p class="card-text place"><span class="badge badge-info bg-info">장소</span> 롯데콘서트홀</p>
-          <p class="card-text projectCardFeeDay"><span class="badge badge-info bg-info">가격</span> R 120,000 S 90,000 A 60,000 B 30,000 C 10,000</p>
-          <p class="card-text projectCardDate"><span class="badge badge-info bg-info">일정</span> 2023-06-29~2023-06-29</p>
+<div class="container-fluid d-flex flex-wrap">
+    <!-- 타임리프에 받아온 데이터를 받는 형태로 생성  -->
+    <div class="d-flex flex-wrap card-container" th:each="event : ${events}">
+        <div class="card card-custom">
+            <a th:href="${event.getOrg_link()}">
+                <img class="card-img-top imageWrapper"
+                     th:src="${event.getMain_img()}"
+                     alt="Card image">
+            </a>
+            <div class="card-body">
+                <p class="card-text codeName text-sm-left" th:text="${event.getCodename()}">
+                    <span class="badge badge-info bg-info">테마</span>클래식</p>
+                <p class="card-text title" th:text="${event.getTitle()}">2023 서울시향 미하일 플레트뇨프와 선우예권 ①</p>
+                <p class="card-text place" th:text="${event.getPlace()}"><span
+                        class="badge badge-info bg-info">장소</span> 롯데콘서트홀</p>
+                <p class="card-text projectCardFeeDay" th:text="${event.getUse_fee()}"><span
+                        class="badge badge-info bg-info">가격</span> R 120,000 S
+                    90,000 A 60,000 B 30,000 C 10,000</p>
+                <p class="card-text projectCardDate" th:text="${event.getDate()}"><span
+                        class="badge badge-info bg-info">일정</span>
+                    2023-06-29~2023-06-29</p>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="col-sm col">
-      <div class="card">
-        <div class="card-body">
-          <img class="imageWrapper" src="https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0ca211044ff94618ac75427b299492f6&thumb=Y" alt="Card image">
-          <p class="card-text codeName text-sm-left"><span class="badge badge-info bg-info">테마</span> 클래식</p>
-          <p class="card-text title">2023 서울시향 미하일 플레트뇨프와 선우예권 ①</p>
-          <p class="card-text place"><span class="badge badge-info bg-info">장소</span> 롯데콘서트홀</p>
-          <p class="card-text projectCardFeeDay"><span class="badge badge-info bg-info">가격</span> R 120,000 S 90,000 A 60,000 B 30,000 C 10,000</p>
-          <p class="card-text projectCardDate"><span class="badge badge-info bg-info">일정</span> 2023-06-29~2023-06-29</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm col">
-      <div class="card">
-        <div class="card-body">
-          <img class="imageWrapper" src="https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0ca211044ff94618ac75427b299492f6&thumb=Y" alt="Card image">
-          <p class="card-text codeName"><span class="badge badge-info bg-info">테마</span> 클래식</p>
-          <p class="card-text title">2023 서울시향 미하일 플레트뇨프와 선우예권 ①</p>
-          <p class="card-text place"><span class="badge badge-info bg-info">장소</span> 롯데콘서트홀</p>
-          <p class="card-text projectCardFeeDay"><span class="badge badge-info bg-info">가격</span> R 120,000 S 90,000 A 60,000 B 30,000 C 10,000</p>
-          <p class="card-text projectCardDate"><span class="badge badge-info bg-info">일정</span> 2023-06-29~2023-06-29</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm col">
-      <div class="card">
-        <div class="card-body">
-          <img class="imageWrapper" src="https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0ca211044ff94618ac75427b299492f6&thumb=Y" alt="Card image">
-          <p class="card-text codeName"><span class="badge badge-info bg-info">테마</span> 클래식</p>
-          <p class="card-text title">2023 서울시향 미하일 플레트뇨프와 선우예권 ①</p>
-          <p class="card-text place"><span class="badge badge-info bg-info">장소</span> 롯데콘서트홀</p>
-          <p class="card-text projectCardFeeDay"><span class="badge badge-info bg-info">가격</span> R 120,000 S 90,000 A 60,000 B 30,000 C 10,000</p>
-          <p class="card-text projectCardDate"><span class="badge badge-info bg-info">일정</span> 2023-06-29~2023-06-29</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row no-gutters">
-    <div class="col-sm col">
-      <div class="card">
-        <div class="card-body">
-          <img class="imageWrapper" src="https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0ca211044ff94618ac75427b299492f6&thumb=Y" alt="Card image">
-          <p class="card-text codeName"><span class="badge badge-info bg-info">테마</span> 클래식</p>
-          <p class="card-text title">2023 서울시향 미하일 플레트뇨프와 선우예권 ①</p>
-          <p class="card-text place"><span class="badge badge-info bg-info">장소</span> 롯데콘서트홀</p>
-          <p class="card-text projectCardFeeDay"><span class="badge badge-info bg-info">가격</span> R 120,000 S 90,000 A 60,000 B 30,000 C 10,000</p>
-          <p class="card-text projectCardDate"><span class="badge badge-info bg-info">일정</span> 2023-06-29~2023-06-29</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm col">
-      <div class="card">
-        <div class="card-body">
-          <img class="imageWrapper" src="https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0ca211044ff94618ac75427b299492f6&thumb=Y" alt="Card image">
-          <p class="card-text codeName"><span class="badge badge-info bg-info">테마</span> 클래식</p>
-          <p class="card-text title">2023 서울시향 미하일 플레트뇨프와 선우예권 ①</p>
-          <p class="card-text place"><span class="badge badge-info bg-info">장소</span> 롯데콘서트홀</p>
-          <p class="card-text projectCardFeeDay"><span class="badge badge-info bg-info">가격</span> R 120,000 S 90,000 A 60,000 B 30,000 C 10,000</p>
-          <p class="card-text projectCardDate"><span class="badge badge-info bg-info">일정</span> 2023-06-29~2023-06-29</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm col">
-      <div class="card">
-        <div class="card-body">
-          <img class="imageWrapper" src="https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0ca211044ff94618ac75427b299492f6&thumb=Y" alt="Card image">
-          <p class="card-text codeName"><span class="badge badge-info bg-info">테마</span> 클래식</p>
-          <p class="card-text title">2023 서울시향 미하일 플레트뇨프와 선우예권 ①</p>
-          <p class="card-text place"><span class="badge badge-info bg-info">장소</span> 롯데콘서트홀</p>
-          <p class="card-text projectCardFeeDay"><span class="badge badge-info bg-info">가격</span> R 120,000 S 90,000 A 60,000 B 30,000 C 10,000</p>
-          <p class="card-text projectCardDate"><span class="badge badge-info bg-info">일정</span> 2023-06-29~2023-06-29</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm col">
-      <div class="card">
-        <div class="card-body">
-          <img class="imageWrapper" src="https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=0ca211044ff94618ac75427b299492f6&thumb=Y" alt="Card image">
-          <p class="card-text codeName"><span class="badge badge-info bg-info">테마</span> 클래식</p>
-          <p class="card-text title">2023 서울시향 미하일 플레트뇨프와 선우예권 ①</p>
-          <p class="card-text place"><span class="badge badge-info bg-info">장소</span> 롯데콘서트홀</p>
-          <p class="card-text projectCardFeeDay"><span class="badge badge-info bg-info">가격</span> R 120,000 S 90,000 A 60,000 B 30,000 C 10,000</p>
-          <p class="card-text projectCardDate"><span class="badge badge-info bg-info">일정</span> 2023-06-29~2023-06-29</p>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
-<div class="d-flex justify-content-center">
-  <nav aria-label="Page navigation example">
-    <ul class="pagination">
-      <li class="page-item">
-        <a class="page-link" href="#!" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-          <span class="sr-only">Previous</span>
-        </a>
-      </li>
-      <li class="page-item"><a class="page-link" href="#!">1</a></li>
-      <li class="page-item"><a class="page-link" href="#!">2</a></li>
-      <li class="page-item"><a class="page-link" href="#!">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#!" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-          <span class="sr-only">Next</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-</div>
-<div th:replace="fragments/footer :: footer" />
+<!--<div class="d-flex justify-content-center">-->
+<!--    <nav aria-label="Page navigation example">-->
+<!--        <ul class="pagination"-->
+<!--            th:with="start=${T(Math).floor(events.indexOf()/40*40 + 1)},-->
+<!--                last=(${start + 39 < list.totalPages ? start + 39 : list.totalPages})">-->
+<!--            <th:block th:with="-->
+<!--                firstAddr=@{/chart(page=1)},-->
+<!--                prevAddr=@{/chart(page=${list.number})},-->
+<!--                nextAddr=@{/chart(page=${list.number + 2})},-->
+<!--                lastAddr=@{/chart(page=${list.totalPages})}">-->
+<!--                <li>-->
+<!--                    <a th:href="${firstAddr}" aria-label="First">-->
+<!--                        <span aria-hidden="true">First</span>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash; 이전 페이지로 가기 버튼 &ndash;&gt;-->
+<!--                <li th:class="${list.first} ? 'disabled'">-->
+<!--                    <a th:href="${list.first} ? '#' :${prevAddr}"-->
+<!--                       aria-label="Previous">-->
+<!--                        <span aria-hidden="true">&lt;</span>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash;1,2,3,4,.. 등 페이지&ndash;&gt;-->
+<!--                <li th:each="page: ${#numbers.sequence(start, last)}"-->
+<!--                    th:class="${page == list.number + 1} ? 'active'">-->
+<!--                    <a th:text="${page}" th:href="@{/chart(page=${page})}"></a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash;다음 페이지로 &ndash;&gt;-->
+<!--                <li th:class="${list.last} ? 'disabled'">-->
+<!--                    <a th:href="${list.last} ? '#' : ${nextAddr}"-->
+<!--                       aria-label="Next">-->
+<!--                        <span aria-hidden="true">&gt;</span>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash;맨 마지막 페이지로 이동 &ndash;&gt;-->
+<!--                <li>-->
+<!--                    <a th:href="${lastAddr}" aria-label="Last">-->
+<!--                        <span aria-hidden="true">Last</span>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--            </th:block>-->
+
+<!--        </ul>-->
+<!--    </nav>-->
+<!--</div>-->
+<div th:replace="fragments/footer :: footer"/>
 </body>
 </html>

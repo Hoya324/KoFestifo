@@ -1,4 +1,4 @@
-package ToyProject.KoFestifo.domain;
+package ToyProject.KoFestifo.domain.event.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

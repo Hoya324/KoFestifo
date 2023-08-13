@@ -1,5 +1,6 @@
-package ToyProject.KoFestifo.domain;
+package ToyProject.KoFestifo.domain.event.entity;
 
+import ToyProject.KoFestifo.domain.member.entity.Member;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
